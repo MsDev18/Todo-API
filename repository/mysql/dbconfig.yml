@@ -3,6 +3,7 @@ production:
   datasource: todo:todo-dgebwgkthv@(127.0.0.1:3309)/todo_db?parseTime=true
   dir: ./repository/mysql/migrations
 
-
+# get dependensie
+# go get -u github.com/go-sql-driver/mysql
 # datasource schema
 # user:password@(host:port)/dbname?param...
