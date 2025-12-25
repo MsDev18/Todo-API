@@ -1,9 +1,5 @@
 package main
 
-import (
-	"fmt"
-	"todo-api/repository/mysql"
-)
 
 func main() {
 	// Setup Database
@@ -15,7 +11,5 @@ func main() {
 		Password: "todo-dgebwgkthv",
 	}
 	mysqlDB := mysql.New(DBCfg)
-	fmt.Println(mysqlDB)
-
-	
+	fmt.Println(mysqlDB) 
 }
