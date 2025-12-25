@@ -13,7 +13,7 @@ $ go get -u  github.com/go-sql-driver/mysql
 ```
 migration command :
 ``` bash
-$ sql-migrate up -config="./repository/mysql/dbconfig.yml" -env="production"
-$ sql-migrate down -config="./repository/mysql/dbconfig.yml" -env="production" -limit=1
-$ sql-migrate status -config="./repository/mysql/dbconfig.yml" -env="production"
+$ sql-migrate up -config="./repository/migrator/dbconfig.yml" -env="production"
+$ sql-migrate down -config="./repository/migrator/dbconfig.yml" -env="production" -limit=1
+$ sql-migrate status -config="./repository/migrator/dbconfig.yml" -env="production"
 ```
