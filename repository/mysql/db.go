@@ -9,11 +9,12 @@ import (
 )
 
 type Config struct {
-	DBName   string
-	Host     string
-	Port     uint
-	Username string
-	Password string
+	// TODO - review
+	Name     string `koanf:"name"`
+	Host     string `koanf:"host"`
+	Port     uint   `koanf:"port"`
+	Username string `koanf:"username"`
+	Password string `koanf:"password"`
 }
 
 type MySQLDB struct {
@@ -25,7 +26,7 @@ func New(cfg Config) *MySQLDB {
 	// Generate DataSource
 	// DataSource structer
 	// user:password@(host:port)/dbname?param...
-	dataSource := fmt.Sprintf("%s:%s@(%s:%d)/%s?parseTime=true", cfg.Username, cfg.Password, cfg.Host, cfg.Port, cfg.DBName)
+	dataSource := fmt.Sprintf("%s:%s@(%s:%d)/%s?parseTime=true", cfg.Username, cfg.Password, cfg.Host, cfg.Port, cfg.Name)
 
 	db, err := sql.Open("mysql", dataSource)
 	if err != nil {

@@ -26,7 +26,7 @@ func New(dbCfg mysql.Config, dialect string) Migrator {
 }
 
 func (m Migrator) Up() {
-	dataSource := fmt.Sprintf("%s:%s@(%s:%d)/%s?parseTime=true", m.dbCfg.Username, m.dbCfg.Password, m.dbCfg.Host, m.dbCfg.Port, m.dbCfg.DBName)
+	dataSource := fmt.Sprintf("%s:%s@(%s:%d)/%s?parseTime=true", m.dbCfg.Username, m.dbCfg.Password, m.dbCfg.Host, m.dbCfg.Port, m.dbCfg.Name)
 
 	db, err := sql.Open(m.dialect, dataSource)
 	if err != nil {
@@ -39,7 +39,7 @@ func (m Migrator) Up() {
 }
 
 func (m Migrator) Down() {
-	dataSource := fmt.Sprintf("%s:%s@(%s:%d)/%s?parseTime=true", m.dbCfg.Username, m.dbCfg.Password, m.dbCfg.Host, m.dbCfg.Port, m.dbCfg.DBName)
+	dataSource := fmt.Sprintf("%s:%s@(%s:%d)/%s?parseTime=true", m.dbCfg.Username, m.dbCfg.Password, m.dbCfg.Host, m.dbCfg.Port, m.dbCfg.Name)
 
 	db, err := sql.Open(m.dialect, dataSource)
 	if err != nil {

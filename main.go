@@ -1,15 +1,20 @@
 package main
 
+import (
+	"fmt"
+	"todo-api/config"
+	"todo-api/repository/mysql"
+)
 
 func main() {
-	// Setup Database
-	DBCfg := mysql.Config{
-		DBName:   "todo_db",
-		Port:     3309,
-		Host:     "localhost",
-		Username: "todo",
-		Password: "todo-dgebwgkthv",
-	}
-	mysqlDB := mysql.New(DBCfg)
-	fmt.Println(mysqlDB) 
+	// TODO - fixed bug in declare parent name in .env file
+	// for this strcure REDIS_DB_HOST
+	// return redis.db.host❌ 
+	// but shulde be return redisdb.host or redis-db.host ✅
+	cfg := config.Load()
+	fmt.Println(cfg)
+
+	mysqlDB := mysql.New(cfg.DB)
+	fmt.Println(mysqlDB)
+
 }
